@@ -1,0 +1,27 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Python
+*.py[cod]
+.venv/
+venv/
+
+# Environment variables and secrets
+.env
+.env.*
+.idea/
+.vscode/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Local vector database
+Data/vector_store/
+
+# Generated files
+*.log
