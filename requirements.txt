@@ -8,3 +8,6 @@ langchain-text-splitters
 sentence_transformers
 faiss-cpu
 chromadb
+groq
+langchain-groq
+python-dotenv

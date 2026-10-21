@@ -1,0 +1,526 @@
+Java Programming Course
+
+1. Introduction to Java
+
+Java is a high-level, class-based, object-oriented programming language
+designed to be portable across platforms. Java source code is compiled
+into bytecode, which runs on the Java Virtual Machine (JVM).
+
+Java is widely used for backend development, enterprise applications,
+Android development, financial systems, and distributed software.
+
+Key Features
+
+-   Platform independence through the JVM
+-   Object-oriented programming
+-   Strong type system
+-   Automatic memory management through garbage collection
+-   Multithreading support
+-   Extensive standard library and ecosystem
+
+Example
+
+    public class Main {
+        public static void main(String[] args) {
+            String name = "Sharad";
+            int age = 24;
+
+            System.out.println("My name is " + name + " and I am " + age + " years old.");
+        }
+    }
+
+2. Java Development Environment: JDK, JRE, and JVM
+
+The Java Development Kit (JDK) contains tools needed to develop Java
+applications, including the compiler. The Java Runtime Environment (JRE)
+traditionally refers to the components needed to run Java applications.
+The Java Virtual Machine (JVM) executes Java bytecode.
+
+How Java Runs
+
+1.  Write source code in a .java file.
+2.  Compile the source code using javac.
+3.  The compiler produces bytecode in a .class file.
+4.  The JVM loads and executes the bytecode.
+
+Example Commands
+
+    javac Main.java
+    java Main
+
+3. Variables and Data Types
+
+Variables store values used by a program. Java is statically typed, so
+variables have declared types.
+
+Primitive Data Types
+
+-   byte: Small integer
+-   short: Short integer
+-   int: Standard integer
+-   long: Large integer
+-   float: Single-precision decimal
+-   double: Double-precision decimal
+-   char: Single UTF-16 code unit
+-   boolean: true or false
+
+Reference types include classes, arrays, interfaces, and enums.
+
+Example
+
+    public class Main {
+        public static void main(String[] args) {
+            int count = 10;
+            double price = 99.50;
+            char grade = 'A';
+            boolean isActive = true;
+            String language = "Java";
+
+            System.out.println(count);
+            System.out.println(price);
+            System.out.println(grade);
+            System.out.println(isActive);
+            System.out.println(language);
+        }
+    }
+
+4. Operators and Conditional Statements
+
+Operators perform arithmetic, comparison, logical, assignment, and other
+operations. Conditional statements select which block of code runs.
+
+Java uses if, else if, else, and switch for decision-making.
+
+Example
+
+    public class Main {
+        public static void main(String[] args) {
+            int marks = 85;
+
+            if (marks >= 90) {
+                System.out.println("Grade A");
+            } else if (marks >= 75) {
+                System.out.println("Grade B");
+            } else {
+                System.out.println("Needs improvement");
+            }
+        }
+    }
+
+5. Loops
+
+Loops execute statements repeatedly. Java provides for, enhanced for,
+while, and do-while loops.
+
+Example
+
+    public class Main {
+        public static void main(String[] args) {
+            for (int number = 1; number <= 5; number++) {
+                System.out.println(number);
+            }
+
+            int count = 1;
+            while (count <= 3) {
+                System.out.println("Java practice");
+                count++;
+            }
+        }
+    }
+
+6. Arrays and Strings
+
+An array stores a fixed number of values of the same type. String
+represents text and is immutable, meaning its value cannot be changed
+after the object is created.
+
+Example
+
+    import java.util.Arrays;
+
+    public class Main {
+        public static void main(String[] args) {
+            int[] numbers = {10, 20, 30};
+            String language = "Java";
+
+            System.out.println(numbers[0]);
+            System.out.println(Arrays.toString(numbers));
+            System.out.println(language.length());
+            System.out.println(language.toUpperCase());
+        }
+    }
+
+7. Methods
+
+A method is a named block of code that performs a task. Methods can
+accept parameters and return values. Method overloading allows multiple
+methods in the same class to use the same name with different parameter
+lists.
+
+Example
+
+    public class Main {
+        static int calculateSum(int a, int b) {
+            return a + b;
+        }
+
+        public static void main(String[] args) {
+            int result = calculateSum(10, 20);
+            System.out.println(result);
+        }
+    }
+
+8. Object-Oriented Programming
+
+Object-oriented programming organizes code around classes and objects. A
+class defines state through fields and behavior through methods. An
+object is an instance of a class.
+
+Core OOP Concepts
+
+-   Encapsulation: Keep data and related behavior together and control
+    access.
+-   Inheritance: Create a class based on another class.
+-   Polymorphism: Allow a common interface or parent type to represent
+    different implementations.
+-   Abstraction: Expose essential behavior while hiding implementation
+    details.
+
+Example
+
+    class Employee {
+        private String name;
+        private String department;
+
+        public Employee(String name, String department) {
+            this.name = name;
+            this.department = department;
+        }
+
+        public String getDetails() {
+            return name + " works in " + department;
+        }
+    }
+
+    public class Main {
+        public static void main(String[] args) {
+            Employee employee = new Employee("Sharad", "Backend Development");
+            System.out.println(employee.getDetails());
+        }
+    }
+
+9. Constructors, Inheritance, and Polymorphism
+
+A constructor initializes a new object. Inheritance lets a subclass
+reuse or specialize behavior from a superclass. Method overriding allows
+a subclass to provide its own implementation of an inherited method.
+
+Example
+
+    class Animal {
+        public void makeSound() {
+            System.out.println("Animal sound");
+        }
+    }
+
+    class Dog extends Animal {
+        @Override
+        public void makeSound() {
+            System.out.println("Bark");
+        }
+    }
+
+    public class Main {
+        public static void main(String[] args) {
+            Animal animal = new Dog();
+            animal.makeSound();
+        }
+    }
+
+10. Interfaces and Abstract Classes
+
+An interface defines a contract that implementing classes agree to
+provide. An abstract class can contain both abstract methods and
+implemented methods, as well as instance state.
+
+Use interfaces to define capabilities and abstract classes when related
+classes need shared behavior or state.
+
+Example
+
+    interface Payable {
+        double calculatePay();
+    }
+
+    class Contractor implements Payable {
+        private double hours;
+        private double hourlyRate;
+
+        Contractor(double hours, double hourlyRate) {
+            this.hours = hours;
+            this.hourlyRate = hourlyRate;
+        }
+
+        @Override
+        public double calculatePay() {
+            return hours * hourlyRate;
+        }
+    }
+
+    public class Main {
+        public static void main(String[] args) {
+            Payable contractor = new Contractor(40, 500);
+            System.out.println(contractor.calculatePay());
+        }
+    }
+
+11. Exception Handling
+
+Exceptions represent conditions that interrupt normal program execution.
+Java supports try, catch, finally, throw, and throws.
+
+Checked exceptions must generally be caught or declared. Unchecked
+exceptions are subclasses of RuntimeException and do not have that
+requirement.
+
+Example
+
+    public class Main {
+        public static void main(String[] args) {
+            try {
+                int result = 100 / 0;
+                System.out.println(result);
+            } catch (ArithmeticException exception) {
+                System.out.println("Division by zero is not allowed.");
+            } finally {
+                System.out.println("Execution completed.");
+            }
+        }
+    }
+
+12. Collections Framework
+
+The Java Collections Framework provides interfaces and classes for
+storing and processing groups of objects.
+
+Common interfaces and implementations include: - List: Ordered
+collection that permits duplicates; ArrayList is a common
+implementation. - Set: Collection that prevents duplicate elements;
+HashSet is a common implementation. - Queue: Collection designed for
+processing elements, often in order. - Map: Key-value mappings; HashMap
+is a common implementation.
+
+Example
+
+    import java.util.ArrayList;
+    import java.util.HashMap;
+    import java.util.List;
+    import java.util.Map;
+
+    public class Main {
+        public static void main(String[] args) {
+            List<String> skills = new ArrayList<>();
+            skills.add("Java");
+            skills.add("SQL");
+            skills.add("Spring Boot");
+
+            Map<String, String> employee = new HashMap<>();
+            employee.put("name", "Sharad");
+            employee.put("role", "Backend Developer");
+
+            System.out.println(skills);
+            System.out.println(employee.get("role"));
+        }
+    }
+
+13. Generics and Lambda Expressions
+
+Generics let classes, interfaces, and methods operate on types specified
+by the caller while improving compile-time type safety. Lambda
+expressions provide concise implementations of functional interfaces.
+
+Example
+
+    import java.util.List;
+
+    public class Main {
+        public static void main(String[] args) {
+            List<String> languages = List.of("Java", "Python", "C#");
+
+            languages.forEach(language -> System.out.println(language));
+        }
+    }
+
+14. File Handling
+
+Java supports file operations through APIs such as java.nio.file.Path
+and Files. These APIs can read and write text while allowing exceptions
+to be handled explicitly.
+
+Example
+
+    import java.io.IOException;
+    import java.nio.file.Files;
+    import java.nio.file.Path;
+
+    public class Main {
+        public static void main(String[] args) throws IOException {
+            Path path = Path.of("example.txt");
+
+            Files.writeString(path, "Learning Java file handling.");
+            String content = Files.readString(path);
+
+            System.out.println(content);
+        }
+    }
+
+15. Working with JSON and APIs
+
+Backend applications often exchange data as JSON over HTTP. Java
+developers may use libraries such as Jackson to serialize Java objects
+to JSON and deserialize JSON into Java objects.
+
+An API defines how software components communicate. REST APIs commonly
+use HTTP methods such as GET, POST, PUT, PATCH, and DELETE.
+
+Spring Boot is a popular framework for building Java backend services
+and REST APIs.
+
+Conceptual REST Endpoint
+
+A GET endpoint at /api/health might return:
+
+    {
+      "status": "healthy",
+      "service": "java-api"
+    }
+
+The response body is JSON. A real endpoint also requires a running web
+application and route configuration.
+
+16. Multithreading and Concurrency
+
+Concurrency allows multiple tasks to make progress during overlapping
+periods. Java provides Thread, Runnable, ExecutorService, and other
+concurrency utilities.
+
+Concurrent code requires careful handling of shared mutable state.
+Synchronization, immutable objects, and thread-safe classes can help
+prevent race conditions.
+
+Example
+
+    public class Main {
+        public static void main(String[] args) throws InterruptedException {
+            Thread worker = new Thread(() ->
+                System.out.println("Task executed by a worker thread")
+            );
+
+            worker.start();
+            worker.join();
+
+            System.out.println("Main thread completed");
+        }
+    }
+
+17. Introduction to Artificial Intelligence
+
+Artificial intelligence enables software to perform tasks such as
+language understanding, classification, reasoning, and content
+generation.
+
+Machine learning is a branch of AI in which models learn patterns from
+data. Deep learning uses neural networks to learn complex
+representations. Large Language Models (LLMs) process and generate
+language based on patterns learned during training.
+
+Applications can connect to LLMs through APIs and use external data to
+improve the relevance of their answers.
+
+18. Introduction to Retrieval-Augmented Generation
+
+Retrieval-Augmented Generation, or RAG, combines information retrieval
+with language generation.
+
+A RAG application retrieves relevant information from an external
+knowledge source and supplies that information as context to a language
+model. This is useful for question answering over technical
+documentation, company policies, manuals, and other private or
+domain-specific content.
+
+Basic RAG Workflow
+
+1.  Load source documents.
+2.  Split documents into smaller text chunks.
+3.  Generate embeddings for the chunks.
+4.  Store embeddings and associated text in a vector database.
+5.  Retrieve relevant chunks for a user question.
+6.  Pass the retrieved context and question to an LLM.
+7.  Generate an answer grounded in the retrieved context.
+
+19. LangChain Document Data Structure
+
+LangChain provides a Document class to represent text with associated
+metadata. It is available from langchain_core.documents.
+
+A Document typically contains: - page_content: The text content. -
+metadata: A dictionary containing source information, page numbers,
+topics, or other attributes. - id: An optional identifier.
+
+Example
+
+    from langchain_core.documents import Document
+
+    document = Document(
+        page_content="Java is a class-based, object-oriented programming language.",
+        metadata={
+            "source": "java_course.txt",
+            "topic": "Introduction to Java",
+            "category": "Programming"
+        },
+        id="java-001"
+    )
+
+    print(document.page_content)
+    print(document.metadata)
+    print(document.id)
+
+Although this course describes Java, the example uses Python because
+LangChain’s Document object belongs to the Python LangChain ecosystem.
+The same document structure can represent text extracted from Java
+documentation.
+
+Document objects can be passed between loaders, text splitters,
+retrievers, and other components of a RAG pipeline.
+
+20. Practice Exercises
+
+1.  Declare variables using Java primitive data types and String.
+2.  Write a method that calculates the average of three numbers.
+3.  Create an Employee class with private fields and public methods.
+4.  Demonstrate inheritance and method overriding.
+5.  Store programming skills in an ArrayList and print each skill.
+6.  Use a HashMap to represent an employee record.
+7.  Write text to a file and read it back using the Files API.
+8.  Explain the difference between JDK, JVM, and JRE.
+9.  Explain the difference between an interface and an abstract class.
+10. Load this course text into Python using LangChain TextLoader.
+11. Convert the loaded text into LangChain Document objects.
+12. Add source, topic, and category metadata to document chunks.
+13. Split the course content into smaller chunks and inspect their
+    sizes.
+14. Prepare the chunks for embedding and vector search.
+15. Build a RAG question-answering pipeline that answers questions about
+    Java using this document.
+
+Conclusion
+
+Java is a widely used language for object-oriented programming,
+enterprise software, and backend development. Understanding its syntax,
+data structures, collections, exceptions, file handling, and concurrency
+provides a foundation for building reliable applications.
+
+For RAG practice, this course document serves as a sample knowledge
+source. A Python-based LangChain pipeline can load the file, split its
+text, attach metadata, create embeddings, retrieve relevant chunks, and
+provide the retrieved context to an LLM.
