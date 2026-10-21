@@ -1404,6 +1404,20 @@ wheels = [
 ]
 
 [[package]]
+name = "langchain-huggingface"
+version = "1.2.3"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "huggingface-hub" },
+    { name = "langchain-core" },
+    { name = "tokenizers" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/fd/35/17f59f4a1202de947797b76a1b898a0e040dd3ee7060255d0efbeebeb0b1/langchain_huggingface-1.2.3.tar.gz", hash = "sha256:9848339ce197d48dd95668c2aac32a4523ca879840a31ebcef59a5b616315826", size = 282933, upload-time = "2026-10-07T20:09:49.481Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/66/f8/222ada54c99a512bd497f3526f6c14a55f6c0bc39ba9a05a4170ebbfe561/langchain_huggingface-1.2.3-py3-none-any.whl", hash = "sha256:d687cd9554a20edb6af86aceae2465b4d0f73557acfb9b9c6778cb0e6d5929a7", size = 34219, upload-time = "2026-10-07T20:09:48.134Z" },
+]
+
+[[package]]
 name = "langchain-protocol"
 version = "0.0.19"
 source = { registry = "https://pypi.org/simple" }
@@ -2991,6 +3005,7 @@ dependencies = [
     { name = "langchain-community" },
     { name = "langchain-core" },
     { name = "langchain-groq" },
+    { name = "langchain-huggingface" },
     { name = "langchain-pymupdf4llm" },
     { name = "langchain-text-splitters" },
     { name = "pymupdf" },
@@ -2998,6 +3013,7 @@ dependencies = [
     { name = "python-dotenv" },
     { name = "sentence-transformers" },
     { name = "tqdm" },
+    { name = "typesense" },
 ]
 
 [package.metadata]
@@ -3010,6 +3026,7 @@ requires-dist = [
     { name = "langchain-community", specifier = ">=0.4.2" },
     { name = "langchain-core", specifier = ">=1.6.11" },
     { name = "langchain-groq", specifier = ">=1.1.3" },
+    { name = "langchain-huggingface", specifier = ">=1.2.3" },
     { name = "langchain-pymupdf4llm", specifier = ">=0.5.0" },
     { name = "langchain-text-splitters", specifier = ">=1.1.3" },
     { name = "pymupdf", specifier = ">=1.28.2" },
@@ -3017,6 +3034,7 @@ requires-dist = [
     { name = "python-dotenv", specifier = ">=1.2.4" },
     { name = "sentence-transformers", specifier = ">=6.1.0" },
     { name = "tqdm", specifier = ">=4.70.1" },
+    { name = "typesense", specifier = ">=2.1.0" },
 ]
 
 [[package]]
@@ -3726,6 +3744,19 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/03/51/d33db42cc72ffd8c30777547b42d01f0cbf9d95a770457698d0174b3ed71/typer-0.27.3.tar.gz", hash = "sha256:d0396f770a560ab1b0a8504e13b5f254b728cedb05c61cf0359e944e50ce8901", size = 205303, upload-time = "2026-10-06T17:24:16.61Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/07/ea/2e31b67051e91a133189e9c000c222502ddc6969856416de0d095de4c0b0/typer-0.27.3-py3-none-any.whl", hash = "sha256:e50022f28b82a86313e54501317a1db64bf8f8d036ff8cfe5ca7e47675454aff", size = 123312, upload-time = "2026-10-06T17:24:15.054Z" },
+]
+
+[[package]]
+name = "typesense"
+version = "2.1.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "httpx" },
+    { name = "typing-extensions" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/db/a8/0bcb32ef0234b40261ef4ddde32d46dac2c29fd9a3d1222b7eae8771f576/typesense-2.1.0.tar.gz", hash = "sha256:4fe40fc6ace5fcb73e272a695d13073e265da79f605595d329a718e563cb0aa8", size = 97287, upload-time = "2026-10-07T14:11:19.659Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/47/05/c6bd875a522f4ce4ec69b149aa10c4c547e0222c4e2f3d9c5161aecf9fd1/typesense-2.1.0-py3-none-any.whl", hash = "sha256:51ab05688f4eb33a84d60c6056fdc6c586654413983082f400b5aee164f698fc", size = 160491, upload-time = "2026-10-07T14:11:18.211Z" },
 ]
 
 [[package]]

@@ -11,3 +11,5 @@ chromadb
 groq
 langchain-groq
 python-dotenv
+typesense
+langchain_huggingface
